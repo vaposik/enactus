@@ -1,0 +1,291 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #f7f7f7;
+}
+
+.header {
+  padding: 20px 40px;
+  background: white;
+}
+
+.container {
+  padding: 40px 60px;
+}
+
+.title {
+  font-size: 36px;
+  margin-bottom: 40px;
+}
+
+/* PRODUCT CARD */
+.product-card {
+  display: flex;
+  gap: 40px;
+  background: #fff;
+  border-radius: 30px;
+  padding: 30px;
+  margin-bottom: 50px;
+}
+
+/* IMAGE */
+.image-box {
+  background: white;
+  border-radius: 25px;
+  padding: 20px;
+  width: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-box img {
+  width: 100%;
+}
+
+/* INFO */
+.info-box {
+  flex: 1;
+  position: relative;
+}
+
+.info-box h2 {
+  margin-top: 0;
+  font-size: 28px;
+}
+
+.subtitle {
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.info-box ul {
+  padding-left: 18px;
+  line-height: 1.6;
+}
+
+/* BUTTON */
+.buy-btn {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 12px 26px;
+  border-radius: 20px;
+  border: none;
+  background: black;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.buy-btn:hover {
+  opacity: 0.85;
+}
+
+/* FOOTER */
+.footer {
+  background: black;
+  color: white;
+  text-align: center;
+  padding: 30px;
+}
+
+/* MODAL BACKGROUND */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* MODAL BOX */
+.modal-box {
+  background: white;
+  width: 420px;
+  padding: 30px;
+  border-radius: 24px;
+  position: relative;
+  animation: fadeUp 0.3s ease;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-box h2 {
+  margin-top: 0;
+  text-align: center;
+}
+
+/* CLOSE */
+.modal-close {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* MODELS */
+.models {
+  margin: 20px 0;
+}
+
+.model {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.model checkbox[type="number"] {
+  width: 60px;
+  padding: 5px;
+}
+
+/* ТОЛЬКО текстовые поля */
+.modal-box input[type="text"],
+.modal-box input[type="email"],
+.modal-box input[type="tel"],
+.modal-box textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+/* number — отдельно */
+.modal-box input[type="number"] {
+  width: 60px;
+  padding: 6px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+/* checkbox — НЕ трогаем */
+.modal-box input[type="checkbox"] {
+  width: auto;
+  margin: 0;
+}
+
+textarea {
+  resize: none;
+  height: 80px;
+}
+
+/* TOTAL */
+.total {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 15px 0;
+  text-align: center;
+}
+
+/* BUTTON */
+.submit-btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 14px;
+  border: none;
+  background: black;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.product {
+  display: grid;
+  grid-template-columns: 24px 1fr 70px;
+  align-items: center;
+  column-gap: 12px;
+  margin-bottom: 14px;
+
+  /* ВАЖНО: отступ товаров */
+  padding-left: 20px;
+}
+
+.product-text {
+  font-size: 14px;
+  line-height: 1.3;
+}
+
+.qty {
+  width: 60px;
+  padding: 6px;
+  text-align: center;
+}
+
+/* label = чекбокс + текст в одну линию */
+.product-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* количество */
+.product input.qty {
+  width: 55px;
+  padding: 6px;
+}
+
+.agree {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+
+  margin: 20px 0 10px -20px; /* ← КЛЮЧ */
+  padding-left: 0;
+
+  font-size: 13px;
+}
+
+.policy-link {
+  color: #000;
+  text-decoration: underline;
+}
+
+.policy-link:hover {
+  opacity: 0.7;
+}
+/* строка согласия — как обычное поле */
+.agree-row {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  column-gap: 10px;
+  align-items: start;
+
+  margin: 12px 0 18px;
+}
+
+/* текст согласия */
+.agree-text {
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.glasses-canvas {
+  width: 100%;
+  height: 300px;
+  display: block;
+}
+
+.image-box img {
+  width: 100%;
+}

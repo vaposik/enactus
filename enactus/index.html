@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Каталог очков</title>
+    <link rel="stylesheet" href="site.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h2>Enactus team</h2>
+    </header>
+
+    <main class="container">
+      <h1 class="title">КАТАЛОГ</h1>
+
+      <!-- CARD 1 -->
+      <section class="product-card">
+        <div class="image-box">
+          <img src="ochki.png" alt="Detector glasses" />
+        </div>
+
+        <div class="info-box">
+          <h2>Detector glasses</h2>
+
+          <p class="subtitle">Общие характеристики</p>
+          <ul>
+            <li>Тип: интегрированные с сенсорами</li>
+            <li>Материал: прочный пластик</li>
+            <li>Вес: 150–200 г</li>
+            <li>Bluetooth подключение</li>
+            <li>2 ультразвуковых сенсора</li>
+            <li>Дальность: 0.2–1.0 м</li>
+          </ul>
+
+          <button class="buy-btn" onclick="openForm(5000)">Купить</button>
+        </div>
+      </section>
+
+      <!-- CARD 2 -->
+      <section class="product-card">
+        <div class="image-box">
+          <img src="ochki.png" alt="Detector glasses" />
+        </div>
+
+        <div class="info-box">
+          <h2>Detector glasses (kids)</h2>
+
+          <p class="subtitle">Общие характеристики</p>
+          <ul>
+            <li>Лёгкая версия для детей</li>
+            <li>Материал: усиленный пластик</li>
+            <li>Вес: 120–150 г</li>
+            <li>Bluetooth</li>
+            <li>2 сенсора</li>
+            <li>Дальность: 0.2–1.0 м</li>
+          </ul>
+
+          <button class="buy-btn" onclick="openForm(7000)">Купить</button>
+        </div>
+      </section>
+      <!-- MODAL -->
+      <div class="modal" id="orderModal">
+        <div class="modal-box small">
+          <span class="modal-close" onclick="closeModal()">×</span>
+
+          <h2>Оформление заказа</h2>
+
+          <form id="orderForm">
+            <!-- USER DATA -->
+            <input type="text" name="name" placeholder="ФИО" required />
+            <input
+              type="text"
+              name="address"
+              placeholder="Город и адрес доставки"
+              required
+            />
+            <input type="email" name="email" placeholder="Email" required />
+            <input
+              type="tel"
+              name="phone"
+              placeholder="Номер телефона"
+              required
+            />
+
+            <textarea name="comment" placeholder="Комментарий"></textarea>
+
+            <!-- PRODUCTS -->
+            <h3 class="section-title">Выбор очков</h3>
+
+            <div class="product">
+              <input type="checkbox" class="product-check" data-price="5000" />
+              <div class="product-text">Detector glasses — 5000 ₸</div>
+              <input type="number" class="qty" value="1" min="1" />
+            </div>
+
+            <div class="product">
+              <input type="checkbox" class="product-check" data-price="7000" />
+              <div class="product-text">Detector glasses (kids) — 7000 ₸</div>
+              <input type="number" class="qty" value="1" min="1" />
+            </div>
+
+            <!-- AGREEMENT -->
+            <div class="agree-row">
+              <input type="checkbox" required />
+              <div class="agree-text">
+                Я согласен(-а).
+                <a href="#" class="policy-link">
+                  Ознакомьтесь с политикой конфиденциальности
+                </a>
+              </div>
+            </div>
+
+            <div class="total">Итог: <span id="totalPrice">0</span> ₸</div>
+
+            <button type="submit" class="submit-btn">Подтвердить заказ</button>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p>skatilis team</p>
+      <p>© Все права защищены</p>
+    </footer>
+
+    <script src="https://unpkg.com/three@0.155.0/build/three.min.js"></script>
+    <script src="https://unpkg.com/three@0.155.0/examples/js/loaders/GLTFLoader.js"></script>
+
+    <script src="site.js"></script>
+  </body>
+</html>
